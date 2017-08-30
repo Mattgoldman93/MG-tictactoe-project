@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic-Tac-Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+      <h1>tic tac toe.</h1>
+
+      <div class="container-fluid board pagination-centered">
+        <div class="row">
+          <button id="box1"class="col-xs-4 box draw-bottom draw-right">box</button>
+          <button id="box2"class="col-xs-4 box draw-bottom draw-left draw-right">box</button>
+          <button id="box3"class="col-xs-4 box draw-bottom draw-left">box</button>
+        </div>
+        <div class="row">
+          <button id="box4"class="col-xs-4 box draw-bottom draw-top draw-right">box</button>
+          <button id="box5"class="col-xs-4 box draw-left draw-right draw-top draw-bottom">box</button>
+          <button id="box6"class="col-xs-4 box draw-left draw-top draw-bottom">box</button>
+        </div>
+        <div class="row">
+          <button id="box7"class="col-xs-4 box draw-top draw-right">box</button>
+          <button id="box8"class="col-xs-4 box draw-top draw-right draw-left">box</button>
+          <button id="box9"class="col-xs-4 box draw-top draw-left">box</button>
+        </div>
+      </div>
+      <div class="forms-all">
+        <form id="sign-up">
+          <br>
+<input name="credentials[email]" type="text" value="an@example.email">
+<input name="credentials[password]" type="password" value="an example password">
+<input name="credentials[password_confirmation]" type="password" value="an example password">
+</form>
+      </div>
+    </body>
+</html>
