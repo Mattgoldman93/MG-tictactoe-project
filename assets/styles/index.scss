@@ -2,7 +2,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 $background-color: #fff;
-$font-color: #dfdfdf;
+$font-color: #201b1b;
 $white: #fff;
 
 body {
@@ -26,6 +26,7 @@ body {
     max-width: 90%;
     max-height: 90%;
     margin-top: 10%;
+    margin-bottom: 10%;
   };
   @media(min-width: 800px) {
     max-width: 80%;
@@ -63,14 +64,18 @@ body {
   //   max-width: 35%;
   //   max-height: 35%;
   // };
-};
+}
 
 
 .box {
   border: 1px solid $white;
   background-color: $white;
   width: 33%;
-  padding-bottom:25%;
+  // vertical-align:middle;
+  font-size:5em;
+  height:2.5em;
+  padding: 0 0 0 0;
+  // text-align: center;
 }
 
 .draw-bottom {
