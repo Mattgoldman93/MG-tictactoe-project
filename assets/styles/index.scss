@@ -77,7 +77,10 @@ body {
   padding: 0 0 0 0;
   // text-align: center;
 }
-
+.center {
+  float: none;
+  margin: 0 auto;
+}
 .draw-bottom {
   border-bottom: 5px solid black;
 }

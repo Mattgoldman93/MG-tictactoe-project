@@ -13,6 +13,13 @@
     </head>
     <body class="container-fluid">
       <h1>tic tac toe.</h1>
+      <div class="forms-all">
+        <form id="sign-up">
+          <input name="credentials[email]" type="text" value="an@example.email">
+          <input name="credentials[password]" type="password" value="an example password">
+          <input name="credentials[password_confirmation]" type="password" value="an example password">
+        </form>
+      </div>
       <h2 class="text-center" id="display"></h2>
       <div class="container-fluid board pagination-centered">
         <div class="row">
@@ -31,14 +38,8 @@
           <button id="box9"class="col-xs-4 box draw-top draw-left"></button>
         </div>
       </div>
-        <div class="newGame"></div>
-      <br>
-      <div class="forms-all">
-        <form id="sign-up">
-          <input name="credentials[email]" type="text" value="an@example.email">
-          <input name="credentials[password]" type="password" value="an example password">
-          <input name="credentials[password_confirmation]" type="password" value="an example password">
-        </form>
+      <div class="container col-xs-1 col-xs-offset-6 center">
+        <button class="btn btn-danger btn-lg" id="resetBoard"type="reset">reset</button>
       </div>
     </body>
 </html>
