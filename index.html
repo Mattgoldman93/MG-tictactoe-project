@@ -12,14 +12,55 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>tic tac toe.</h1>
-      <div class="forms-all">
-        <form id="sign-up">
-          <input name="credentials[email]" type="text" value="an@example.email">
-          <input name="credentials[password]" type="password" value="an example password">
-          <input name="credentials[password_confirmation]" type="password" value="an example password">
-        </form>
-      </div>
+      <nav class="nav navbar" id="topnav">
+        <ul>
+          <li class="title">
+            <h1>tic tac toe.</h1>
+          </li>
+          <li class="modal-button">
+          <!-- Trigger/Open The Modal -->
+          <button id="myBtn" class='btn btn-primary'>Options</button>
+    <!-- The Modal -->
+          <div id="myModal" class="modal">
+          <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p id='message'></p>
+              <form id="sign-up">
+                <fieldset>
+                  <h2>Sign up!</h2>
+                  <hr>
+                  <input type="text" name="credentials[email]" placeholder="Input email">
+                  <input type="text" name="credentials[password]" placeholder="Input password">
+                  <input type="text" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                 <button class="btn btn-success" type="submit" name="submit" >Sign up! </button>
+                </fieldset>
+              </form>
+              <h2>Sign In</h2>
+              <hr>
+              <p id="siMessage"></p>
+              <form id="sign-in">
+                <input type="text" name="credentials[email]" placeholder="Input email">
+                <input type="text" name="credentials[password]" placeholder="Input password">
+                <button type="submit" class="btn btn-success">Submit</button>
+              </form>
+              <h2>Change Password</h2>
+              <hr>
+              <p id="cpwMessage"></p>
+              <form id="change-password">
+                <input type="text" name="passwords[old]" placeholder="Input old password">
+                <input type="text" name="passwords[new]" placeholder="Input new password">
+                <button type="submit" class="btn btn-warning">Submit</button>
+              </form>
+              <form id="sign-out">
+              <button type="submit" class="btn btn-danger">Sign out</button>
+              <p id="soMessage"></p>
+              </form>
+            </div>
+          </div>
+          </li>
+        </ul>
+      </nav>
       <h2 class="text-center" id="display"></h2>
       <div class="container-fluid board pagination-centered">
         <div class="row">
@@ -39,7 +80,7 @@
         </div>
       </div>
       <div class="container col-xs-1 col-xs-offset-6 center">
-        <button class="btn btn-danger btn-lg" id="resetBoard"type="reset">reset</button>
+        <button class="btn btn-danger btn-lg" id="resetBoard"type="reset">Play</button>
       </div>
     </body>
 </html>
