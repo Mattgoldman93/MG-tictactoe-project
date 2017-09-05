@@ -54,6 +54,8 @@ const signOutFailure = function (error) {
 const createGameSuccess = function (data) {
   console.log(data)
   console.log('game created Successfully')
+  store.game = data.game
+  console.log(store.game)
   $('#display').text('X\'s turn')
   $('.box').attr('disabled', false)
   $('#resetBoard').addClass('btn-danger').removeClass('btn-success')
