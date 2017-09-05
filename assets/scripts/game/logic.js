@@ -1,16 +1,21 @@
 'use strict'
+const authEvents = require('../auth/events')
 const turn = ['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X']
 let crntBoard = ['', '', '', '', '', '', '', '', '']
 let i = 0
 let player
 let notPlayer
+let over = false
+
 const gameWon = function (winner) {
+  over = true
   $('#display').text(winner + ' wins!')
   $('#resetBoard').addClass('btn-success').removeClass('btn-danger')
   i = 10
   $('.box').attr('disabled', 'disabled')
 }
 const tie = function () {
+  over = true
   $('#display').text('no winner this time 😢')
   $('.box').attr('disabled', 'disabled')
   $('#resetBoard').addClass('btn-success').removeClass('btn-danger')
@@ -51,10 +56,13 @@ const playerGo = function () {
   event.preventDefault()
   $(this).text(turn[i])
   crntBoard[i] = turn[i]
+  let crntValue = turn[i]
+  let crntIndex = i
   console.log(crntBoard)
   $(this).attr('disabled', 'disabled')
   i++
   checkForWin()
+  authEvents.onUpdateGame(crntIndex, crntValue, over)
 }
 const newGame = function () {
   event.preventDefault()

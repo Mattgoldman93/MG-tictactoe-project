@@ -1,7 +1,5 @@
 'use strict'
-
 const getFormFields = require(`../../../lib/get-form-fields`)
-
 const api = require('./api')
 const ui = require('./ui')
 
@@ -49,6 +47,21 @@ const onCreateGame = function (event) {
     .then(ui.createGameSuccess)
     .catch(ui.signInFailure)
 }
+
+const onUpdateGame = function (crntIndex, crntValue, over) {
+  event.preventDefault()
+  const data = {
+    'game': {
+      'cell': {
+        'index': crntIndex,
+        'value': crntValue
+      },
+      'over': over
+    }
+  }
+  console.log(data)
+  api.updateGame(data)
+}
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -58,5 +71,6 @@ const addHandlers = function () {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onUpdateGame
 }

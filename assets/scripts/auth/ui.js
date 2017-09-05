@@ -1,5 +1,6 @@
 'use strict'
 const store = require('../store')
+// const logic = require('../game/logic')
 const signUpSuccess = function (data) {
   console.log(data)
   console.log('success')
@@ -55,7 +56,7 @@ const createGameSuccess = function (data) {
   console.log(data)
   console.log('game created Successfully')
   store.game = data.game
-  console.log(store.game)
+  console.log(store.game.id)
   $('#display').text('X\'s turn')
   $('.box').attr('disabled', false)
   $('#resetBoard').addClass('btn-danger').removeClass('btn-success')

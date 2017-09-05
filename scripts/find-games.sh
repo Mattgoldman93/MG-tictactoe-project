@@ -1,12 +1,15 @@
+
 API="${API_ORIGIN:-http://tic-tac-toe.wdibos.com}"
 URL_PATH="/games/${ID}"
 
 curl "${API}${URL_PATH}" \
 --include \
---request POST \
+--request PATCH \
 --header "Authorization: Token token=${TOKEN}" \
---header "Content-type: application/json" \
+--header "Content-Type: application/json" \
 --data '{
+
+  }
 }'
 
 echo

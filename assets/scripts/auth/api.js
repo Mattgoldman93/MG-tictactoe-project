@@ -49,8 +49,10 @@ const createGame = function (data) {
   })
 }
 const updateGame = function (data) {
+  console.log('updateGame api function reached')
+  console.log(data)
   return $.ajax({
-    url: config.apiOrigins + '/games/' + store.game.id,
+    url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
     contentType: 'application/json',
     headers: {
