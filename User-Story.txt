@@ -1,0 +1,10 @@
+As a user who wants to log in, I would like to have a clear path to inputting
+the correct information.
+
+As a user who wants to be able to play multiple games without reloading the page
+I would like to see a reset button
+
+As a user who is completely disorganized and absent minded, I would like to see
+a display to tell me when my turn is
+
+As a user who loves tic tac toe, I would like to have a functioning game board.
