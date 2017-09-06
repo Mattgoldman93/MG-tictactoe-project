@@ -59,7 +59,7 @@ const onUpdateGame = function (crntIndex, crntValue, over) {
       'over': over
     }
   }
-  api.updateGame(data)
+  api.updateGame(JSON.stringify(data))
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameFailure)
 }

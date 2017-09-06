@@ -77,7 +77,6 @@ const showGamesFailure = function (error) {
   $('#sgMessage').text('Something went wrong.')
 }
 const updateGameSuccess = function (data) {
-  console.log('success: ' + JSON.parse(data))
   $('#updtr').text('game updated.')
 }
 const updateGameFailure = function (error) {
