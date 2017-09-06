@@ -16,3 +16,4 @@ curl "${API}${URL_PATH}" \
       "over": "'"${OVER}"'"
     }
     }'
+echo

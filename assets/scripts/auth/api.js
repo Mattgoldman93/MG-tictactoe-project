@@ -51,6 +51,11 @@ const createGame = function (data) {
 const updateGame = function (data) {
   console.log('updateGame api function reached')
   console.log(data)
+  const apiUrl = config.apiOrigin + '/games/' + store.game.id
+  const tkn = store.user.token
+  console.log(tkn)
+  console.log('data is ' + data)
+  console.log('api url is ' + apiUrl)
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
@@ -61,11 +66,23 @@ const updateGame = function (data) {
     data
   })
 }
+const showGames = function (data) {
+  console.log('showGames function reached')
+  return $.ajax({
+    url: config.apiOrigin + '/games',
+    method: 'GET',
+    contentType: 'application/json',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
   createGame,
-  updateGame
+  updateGame,
+  showGames
 }

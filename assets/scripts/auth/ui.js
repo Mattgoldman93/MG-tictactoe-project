@@ -63,6 +63,15 @@ const createGameSuccess = function (data) {
   $('#resetBoard').text('Reset')
 }
 
+const showGamesSuccess = function (data) {
+  console.log(data)
+  console.log('success')
+  $('#sgMessage').text('Take a Look!' + data)
+}
+const showGamesFailure = function (error) {
+  console.error(error)
+  $('#sgMessage').text('Something went wrong.')
+}
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -72,5 +81,7 @@ module.exports = {
   changePasswordFailure,
   signOutSuccess,
   signOutFailure,
-  createGameSuccess
+  createGameSuccess,
+  showGamesSuccess,
+  showGamesFailure
 }

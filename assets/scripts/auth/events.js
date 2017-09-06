@@ -62,12 +62,21 @@ const onUpdateGame = function (crntIndex, crntValue, over) {
   console.log(data)
   api.updateGame(data)
 }
+const onShowGames = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log(data)
+  api.showGames(data)
+    .then(ui.showGamesSuccess)
+    .catch(ui.showGamesFailure)
+}
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#resetBoard').on('click', onCreateGame)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
+  $('#show-games').on('click', onShowGames)
 }
 
 module.exports = {

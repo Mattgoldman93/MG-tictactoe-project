@@ -72,6 +72,7 @@ const newGame = function () {
   $('#display').text(null)
   $('#resetBoard').addClass('btn-danger')
   $('#display').text("X's turn")
+  over = false
   i = 0
 }
 const changeDisplay = function () {
