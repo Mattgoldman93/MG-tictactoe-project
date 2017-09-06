@@ -45,7 +45,7 @@ const onCreateGame = function (event) {
   console.log('oncreateGame function reached')
   api.createGame(data)
     .then(ui.createGameSuccess)
-    .catch(ui.signInFailure)
+    .catch(ui.createGameFailure)
 }
 
 const onUpdateGame = function (crntIndex, crntValue, over) {
@@ -59,8 +59,9 @@ const onUpdateGame = function (crntIndex, crntValue, over) {
       'over': over
     }
   }
-  console.log(data)
-  api.updateGame(data)
+  api.updateGame(JSON.stringify(data))
+    .then(ui.updateGameSuccess)
+    .catch(ui.updateGameFailure)
 }
 const onShowGames = function (event) {
   event.preventDefault()

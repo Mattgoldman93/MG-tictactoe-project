@@ -56,8 +56,8 @@ const playerGo = function () {
   event.preventDefault()
   $(this).text(turn[i])
   crntBoard[i] = turn[i]
-  let crntValue = turn[i]
-  let crntIndex = i
+  const crntValue = turn[i]
+  const crntIndex = i
   console.log(crntBoard)
   $(this).attr('disabled', 'disabled')
   i++

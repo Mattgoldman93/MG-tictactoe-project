@@ -63,14 +63,26 @@ const createGameSuccess = function (data) {
   $('#resetBoard').text('Reset')
 }
 
+const createGameFailure = function (error) {
+  console.error(error)
+  $('#resetBoard').text('Please try again')
+}
 const showGamesSuccess = function (data) {
   console.log(data)
   console.log('success')
-  $('#sgMessage').text('Take a Look!' + data)
+  $('#sgMessage').text('Take a Look! ' + data.games.length + ' games played')
 }
 const showGamesFailure = function (error) {
   console.error(error)
   $('#sgMessage').text('Something went wrong.')
+}
+const updateGameSuccess = function (data) {
+  console.log('success: ' + JSON.parse(data))
+  $('#updtr').text('game updated.')
+}
+const updateGameFailure = function (error) {
+  console.error(error)
+  $('#updtr').text('failed to update')
 }
 module.exports = {
   signUpSuccess,
@@ -82,6 +94,9 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   createGameSuccess,
+  createGameFailure,
   showGamesSuccess,
-  showGamesFailure
+  showGamesFailure,
+  updateGameSuccess,
+  updateGameFailure
 }

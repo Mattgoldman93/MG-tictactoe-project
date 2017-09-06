@@ -50,7 +50,6 @@ const createGame = function (data) {
 }
 const updateGame = function (data) {
   console.log('updateGame api function reached')
-  console.log(data)
   const apiUrl = config.apiOrigin + '/games/' + store.game.id
   const tkn = store.user.token
   console.log(tkn)
