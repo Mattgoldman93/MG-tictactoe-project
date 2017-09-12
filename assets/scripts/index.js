@@ -24,6 +24,7 @@ $(() => {
   $('.box').attr('disabled', 'disabled')
   $('#resetBoard').attr('disabled', 'disabled')
   $('#display').text('Please Sign In')
+  $('.initial-hide').hide()
   $('.box').on('click', logic.playerGo)
   $('#resetBoard').on('click', logic.newGame)
 })

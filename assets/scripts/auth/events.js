@@ -42,7 +42,6 @@ const onCreateGame = function (event) {
   const data = getFormFields(this)
   console.log(data)
   event.preventDefault()
-  console.log('oncreateGame function reached')
   api.createGame(data)
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure)
