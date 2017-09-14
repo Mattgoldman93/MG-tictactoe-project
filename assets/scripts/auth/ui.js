@@ -2,16 +2,19 @@
 const store = require('../store')
 // const logic = require('../game/logic')
 const signUpSuccess = function (data) {
+  $('#message').show()
   $('#message').text('Successfully signed up, go ahead and sign in!')
-  $('#message').fadeOut()
+  $('#message').fadeOut(1800)
 }
 
 const signUpFailure = function (error) {
   console.error(error)
+  $('#message').show()
   $('#message').text('You messed up')
-  $('#message').fadeOut()
+  $('#message').fadeOut(1800)
 }
 const signInSuccess = function (data) {
+  $('#siMessage').show()
   $('#siMessage').text('Success!')
   $('#resetBoard').attr('disabled', false)
   $('#resetBoard').addClass('btn-success').removeClass('btn-danger')
@@ -19,27 +22,31 @@ const signInSuccess = function (data) {
   $('#display').text('Press Play!')
   $('.initial-hide').show()
   $('.secondary-hide').hide()
-  $('#siMessage').fadeOut()
+  $('#siMessage').fadeOut(1800)
   store.user = data.user
 }
 const signInFailure = function (error) {
   console.error(error)
+  $('#siMessage').show()
   $('#siMessage').text('You messed up')
-  $('#siMessage').fadeOut()
+  $('#siMessage').fadeOut(1800)
 }
 
 const changePasswordSuccess = function (data) {
+  $('#cpwMessage').show()
   $('#cpwMessage').text('Password changed!')
-  $('#cpwMessage').fadeOut()
+  $('#cpwMessage').fadeOut(1800)
 }
 
 const changePasswordFailure = function (error) {
   console.error(error)
+  $('#cpwMessage').show()
   $('#cpwMessage').text('You messed up')
-  $('#spwMessage').fadeOut()
+  $('#cpwMessage').fadeOut(1800)
 }
 
 const signOutSuccess = function (data) {
+  $('#soMessage').show()
   $('#soMessage').text('Signed out!')
   $('.box').attr('disabled', 'disabled')
   $('#resetBoard').attr('disabled', 'disabled')
@@ -48,13 +55,15 @@ const signOutSuccess = function (data) {
   $('#display').text('Thanks for Playing')
   $('.initial-hide').hide()
   $('.secondary-hide').show()
-  $('#soMessage').fadeOut()
+  $('#soMessage').fadeOut(1800)
+  $('.box').text(null)
   store.user = null
 }
 const signOutFailure = function (error) {
   console.error(error)
+  $('#soMessage').show()
   $('#soMessage').text('You messed up')
-  $('#soMessage').fadeOut()
+  $('#soMessage').fadeOut(1800)
 }
 const createGameSuccess = function (data) {
   console.log('game created Successfully')
@@ -71,13 +80,15 @@ const createGameFailure = function (error) {
   $('#resetBoard').text('Please try again')
 }
 const showGamesSuccess = function (data) {
+  $('#sgMessage').show()
   $('#sgMessage').text('Take a Look! ' + data.games.length + ' games played')
-  $('#sgMessage').fadeOut()
+  $('#sgMessage').fadeOut(5000)
 }
 const showGamesFailure = function (error) {
   console.error(error)
+  $('#sgMessage').show()
   $('#sgMessage').text('Something went wrong.')
-  $('#sgMessage').fadeOut()
+  $('#sgMessage').fadeOut(1800)
 }
 const updateGameSuccess = function (data) {
 }
